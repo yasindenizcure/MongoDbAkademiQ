@@ -1,18 +1,15 @@
-﻿using MongoDB.Bson;
+﻿using AkademiQMongoDb.Entities.Common;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace AkademiQMongoDb.Entities
 {
-    public class Product
+    public class Product: BaseEntity
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
         public string ProductName { get; set; }
         public string ImageUrl { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
-
         public string CategoryName { get; set; }
-        }
+    }
 }
