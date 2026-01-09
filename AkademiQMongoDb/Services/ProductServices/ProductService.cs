@@ -2,9 +2,8 @@
 using AkademiQMongoDb.Entities;
 using AkademiQMongoDb.Settings;
 using Mapster;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
 using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 
 namespace AkademiQMongoDb.Services.ProductServices
 {
@@ -33,7 +32,7 @@ namespace AkademiQMongoDb.Services.ProductServices
         public async Task<List<ResultProductDto>> GetAllAsync()
         {
             var products = await _productCollection.AsQueryable().ToListAsync();
-            return products.Adapt<List<ResultProductDto>>();
+            return products.Adapt<List<ResultProductDto>>().ToList();
 
         }
 
