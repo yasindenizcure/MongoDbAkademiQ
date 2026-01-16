@@ -7,8 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\fruitkha-1.0.0\**" />
+    <Content Remove="wwwroot\fruitkha-1.0.0\**" />
+    <EmbeddedResource Remove="wwwroot\fruitkha-1.0.0\**" />
+    <None Remove="wwwroot\fruitkha-1.0.0\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Mapster" Version="7.4.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.22" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.23" />
     <PackageReference Include="MongoDB.Driver" Version="3.5.2" />
   </ItemGroup>
 
