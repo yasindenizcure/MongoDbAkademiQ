@@ -2,6 +2,8 @@ using AkademiQMongoDb.Services.AdminServices;
 using AkademiQMongoDb.Services.CategoryServices;
 using AkademiQMongoDb.Services.ProductServices;
 using AkademiQMongoDb.Settings;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,12 +16,29 @@ builder.Services.AddScoped<ICategoryService,CategoryService>();
 builder.Services.AddScoped<IProductService,ProductService>();
 builder.Services.AddScoped<IAdminService,AdminService>();
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(options => 
+{
+    options.Filters.Add(new AuthorizeFilter());
+});
 builder.Services.AddSingleton<IDatabaseSettings>(sp => 
 { 
    return sp.GetRequiredService<IOptions<DatabaseSettings>>().Value;
 });
-
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(config =>
+    {
+        config.LoginPath = "/Login/Index";
+        config.LogoutPath = "/Login/Logout";
+        config.Cookie.Name = "MilkyCookie";
+        config.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+        config.SlidingExpiration = true;
+    });
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -32,11 +51,11 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseSession();
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
-//   Admin/Product/Index root yapýlanmasý böyle olacak.
+
     app.MapControllerRoute(
       name: "areas",
       pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
