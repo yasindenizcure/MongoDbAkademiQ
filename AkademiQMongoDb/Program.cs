@@ -1,5 +1,7 @@
+using AkademiQMongoDb.Services.AboutServices;
 using AkademiQMongoDb.Services.AdminServices;
 using AkademiQMongoDb.Services.CategoryServices;
+using AkademiQMongoDb.Services.MenuServices;
 using AkademiQMongoDb.Services.ProductServices;
 using AkademiQMongoDb.Settings;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -15,6 +17,8 @@ builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("D
 builder.Services.AddScoped<ICategoryService,CategoryService>();
 builder.Services.AddScoped<IProductService,ProductService>();
 builder.Services.AddScoped<IAdminService,AdminService>();
+builder.Services.AddScoped<IAboutService,AboutService>();
+builder.Services.AddScoped<IMenuService,MenuService>();
 
 builder.Services.AddControllersWithViews(options => 
 {

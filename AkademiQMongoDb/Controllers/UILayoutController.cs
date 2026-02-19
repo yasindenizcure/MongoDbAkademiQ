@@ -6,7 +6,6 @@ namespace AkademiQMongoDb.Controllers
     [AllowAnonymous]
     public class UILayoutController : Controller
     {
-
         public IActionResult Layout()
         {
             return View();

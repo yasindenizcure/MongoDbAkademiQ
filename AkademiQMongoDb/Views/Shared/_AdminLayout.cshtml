@@ -1,67 +1,121 @@
-﻿
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html class="light" lang="en">
+﻿<!DOCTYPE html>
+<html lang="tr">
 <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Admin Dashboard Layout</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foodu Admin Paneli</title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <script>
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              colors: {
-                "primary": "#137fec",
-                "background-light": "#f6f7f8",
-                "background-dark": "#101922",
-              },
-              fontFamily: {
-                "display": ["Inter", "sans-serif"]
-              },
-              borderRadius: {
-                "DEFAULT": "0.25rem",
-                "lg": "0.5rem",
-                "xl": "0.75rem",
-                "full": "9999px"
-              },
-            },
-          },
-        }
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
     <style>
-        .material-symbols-outlined {
-          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Inter', sans-serif;
         }
-        .material-symbols-outlined.fill {
-          font-variation-settings: 'FILL' 1;
+
+        /* Sidebar Tasarımı (Foodu Koyu Teması) */
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #1a1a2e;
+            padding-top: 20px;
+        }
+
+        .sidebar-brand {
+            color: #fff;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            display: block;
+            text-decoration: none;
+        }
+
+            .sidebar-brand span {
+                color: #ff6b6b; /* Foodu Turuncusu */
+            }
+
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 16px;
+            color: #a0a5ba;
+            display: block;
+            transition: 0.3s;
+        }
+
+            .sidebar a:hover, .sidebar a.active {
+                color: #fff;
+                background-color: #ff6b6b;
+                border-left: 4px solid #fff;
+            }
+
+            .sidebar a i {
+                margin-right: 10px;
+                width: 20px;
+                text-align: center;
+            }
+
+        /* Ana İçerik Alanı */
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        /* Üst Bar (Topbar) */
+        .topbar {
+            background: #fff;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        /* İçerik Kartları */
+        .content-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
     </style>
 </head>
-<body class="font-display bg-background-light dark:bg-background-dark">
-    <div class="relative flex min-h-screen w-full flex-col">
-        <div class="flex h-full w-full flex-1">
-            <!-- SideNavBar -->
-            @await Component.InvokeAsync("_AdminLayoutSidebar")
-            <main class="flex flex-1 flex-col">
-                <!-- TopNavBar -->
-                @await Component.InvokeAsync("_AdminLayoutNavbar")
-                <!-- Main Content Area -->
-                <div class="flex-1 p-8 overflow-y-auto">
-                    @RenderBody()
-                </div>
-            </main>
+<body>
+
+    <div class="sidebar">
+        <a href="/Admin/Default/Index" class="sidebar-brand">
+            <i class="fas fa-utensils"></i> Foodu<span>Admin</span>
+        </a>
+
+        <a href="/Admin/About/Index"><i class="fas fa-info-circle"></i> Hakkımızda</a>
+        <a href="/Admin/Category/Index"><i class="fas fa-list"></i> Kategoriler</a>
+        <a href="/Admin/Product/Index"><i class="fas fa-hamburger"></i> Ürünler</a>
+        <a href="/Admin/Chef/Index"><i class="fas fa-user-tie"></i> Şefler</a>
+        <a href="/Admin/Testimonial/Index"><i class="fas fa-comments"></i> Yorumlar</a>
+        <a href="/Admin/Mail/Index"><i class="fas fa-envelope"></i> İndirim Gönder</a>
+        <a href="/" target="_blank"><i class="fas fa-globe"></i> Siteye Git</a>
+    </div>
+
+    <div class="main-content">
+        <div class="topbar">
+            <h4 class="m-0 text-dark">Yönetim Paneli</h4>
+            <div class="user-info">
+                <span class="text-muted"><i class="fas fa-user-circle fa-lg mr-2"></i> Admin</span>
+            </div>
+        </div>
+
+        <div class="content-card">
+            @RenderBody()
         </div>
     </div>
+
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
