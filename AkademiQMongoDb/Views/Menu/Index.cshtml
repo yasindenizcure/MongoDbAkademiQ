@@ -1,0 +1,333 @@
+﻿@{
+    ViewData["Title"] = "Menü";
+    Layout = "~/Views/UILayout/Layout.cshtml";
+}
+
+<div class="breadcrumb-area bg-cover text-center text-light" style="background-image: url('/Foodu v1.7/source/assets/img/shape/11.jpg');">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <h1>Yemek Menüsü</h1>
+                <ul class="breadcrumb">
+                    <li><a href="/Default/Index"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                    <li>Menü</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="food-menu-area inc-isotop bg-gray default-padding">
+    <div class="container">
+        <div class="food-menu-area">
+            <div class="row">
+                <div class="col-md-12 food-menu-content text-center">
+
+                    <div class="mix-item-menu">
+                        <button class="active" data-filter="*">Tümü</button>
+                        <button data-filter=".pancakes">Krep & Tatlı</button>
+                        <button data-filter=".sandwiches">Sandviçler</button>
+                        <button data-filter=".brunch">Brunch</button>
+                        <button data-filter=".vegetarian">Vejetaryen</button>
+                        <button data-filter=".meat">Et Yemekleri</button>
+                    </div>
+                    <div class="masonary">
+                        <div id="portfolio-grid" class="food-menu-lists colums-3">
+
+                            <div class="food-menu-style-one pf-item pancakes meat">
+                                <div class="item wow fadeInUp">
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="/Foodu v1.7/source/assets/img/menu/1.jpg" alt="Ürün Görseli">
+                                        </a>
+                                    </div>
+                                    <div class="info">
+                                        <h4><a href="#">Çıtır Kenarlı Pizza</a></h4>
+                                        <p>
+                                            Özenle seçilmiş malzemelerle hazırlanmış, odun ateşinde pişmiş nefis İtalyan pizzası.
+                                        </p>
+                                        <div class="food-cats">
+                                            Dana Eti / Zeytinyağı / Baharat
+                                        </div>
+                                        <div class="item-price">
+                                            <div class="left">
+                                                <span>Fiyat</span>
+                                                <h5>₺150.00</h5>
+                                            </div>
+                                            <div class="right">
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="button">
+                                            <a href="#">Sipariş Ver</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="food-menu-style-one pf-item sandwiches vegetarian">
+                                <div class="item wow fadeInUp" data-wow-delay="200ms">
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="/Foodu v1.7/source/assets/img/menu/2.jpg" alt="Ürün Görseli">
+                                        </a>
+                                    </div>
+                                    <div class="info">
+                                        <h4><a href="#">Özel Gurme Burger</a></h4>
+                                        <p>
+                                            Yumuşacık ekmek arasında özel soslar ve karamelize soğan ile hazırlanan lezzet patlaması.
+                                        </p>
+                                        <div class="food-cats">
+                                            Dana Eti / Cheddar / Özel Sos
+                                        </div>
+                                        <div class="item-price">
+                                            <div class="left">
+                                                <span>Fiyat</span>
+                                                <h5>₺180.00</h5>
+                                            </div>
+                                            <div class="right">
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="button">
+                                            <a href="#">Sipariş Ver</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="food-menu-style-one pf-item sandwiches brunch">
+                                <div class="item wow fadeInUp" data-wow-delay="400ms">
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="/Foodu v1.7/source/assets/img/menu/3.jpg" alt="Ürün Görseli">
+                                        </a>
+                                    </div>
+                                    <div class="info">
+                                        <h4><a href="#">Çıtır Tavuk Sepeti</a></h4>
+                                        <p>
+                                            Dışı çıtır çıtır, içi sulu tavuk parçaları ve yanında baharatlı patates kızartması.
+                                        </p>
+                                        <div class="food-cats">
+                                            Tavuk / Özel Baharatlar / Patates
+                                        </div>
+                                        <div class="item-price">
+                                            <div class="left">
+                                                <span>Fiyat</span>
+                                                <h5>₺120.00</h5>
+                                            </div>
+                                            <div class="right">
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="button">
+                                            <a href="#">Sipariş Ver</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="food-menu-style-one pf-item meat pancakes">
+                                <div class="item wow fadeInUp" data-wow-delay="200ms">
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="/Foodu v1.7/source/assets/img/menu/5.jpg" alt="Ürün Görseli">
+                                        </a>
+                                    </div>
+                                    <div class="info">
+                                        <h4><a href="#">Izgara Tavuk Sandviç</a></h4>
+                                        <p>
+                                            Taze yeşillikler ve ızgara tavuk göğsü ile hazırlanan sağlıklı ve doyurucu sandviç.
+                                        </p>
+                                        <div class="food-cats">
+                                            Tavuk / Yeşillik / Zeytinyağı
+                                        </div>
+                                        <div class="item-price">
+                                            <div class="left">
+                                                <span>Fiyat</span>
+                                                <h5>₺110.50</h5>
+                                            </div>
+                                            <div class="right">
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="button">
+                                            <a href="#">Sipariş Ver</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="food-menu-style-one pf-item sandwiches vegetarian">
+                                <div class="item wow fadeInUp" data-wow-delay="400ms">
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="/Foodu v1.7/source/assets/img/menu/6.jpg" alt="Ürün Görseli">
+                                        </a>
+                                    </div>
+                                    <div class="info">
+                                        <h4><a href="#">Somon Izgara</a></h4>
+                                        <p>
+                                            Norveç somonu, yanında buharda pişmiş sebzeler ve limonlu tereyağ sosu ile.
+                                        </p>
+                                        <div class="food-cats">
+                                            Deniz Ürünleri / Sebze / Limon
+                                        </div>
+                                        <div class="item-price">
+                                            <div class="left">
+                                                <span>Fiyat</span>
+                                                <h5>₺250.00</h5>
+                                            </div>
+                                            <div class="right">
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="button">
+                                            <a href="#">Sipariş Ver</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="reservation-style-two-area">
+    <div class="reservation-banner">
+        <img src="/Foodu v1.7/source/assets/img/banner/1.jpg" alt="Rezervasyon Görseli">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-6">
+                <div class="reservation-tabs">
+                    <ul class="nav nav-tabs wow fadeInDown" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="tab_1" data-bs-toggle="tab" data-bs-target="#tabs_1" type="button" role="tab" aria-controls="tabs_1" aria-selected="true">
+                                <img src="/Foodu v1.7/source/assets/img/icon/3.png" alt="Açık Büfe">
+                                Açık Büfe
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="tab_2" data-bs-toggle="tab" data-bs-target="#tabs_2" type="button" role="tab" aria-controls="tabs_2" aria-selected="false">
+                                <img src="/Foodu v1.7/source/assets/img/icon/4.png" alt="Parti">
+                                Parti
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="tab_3" data-bs-toggle="tab" data-bs-target="#tabs_3" type="button" role="tab" aria-controls="tabs_3" aria-selected="false">
+                                <img src="/Foodu v1.7/source/assets/img/icon/5.png" alt="Etkinlik">
+                                Etkinlik
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content wow fadeInUp" id="myTabContent">
+                        <h4 class="sub-heading">Rezervasyon</h4>
+                        <h2 class="title">Masa Ayırtın</h2>
+
+                        <div class="tab-pane fade show active" id="tabs_1" role="tabpanel" aria-labelledby="tab_1">
+                            <form class="reservation-form" action="#">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="phone">Telefon</label>
+                                            <input class="form-control" id="phone" name="phone" placeholder="+90 555 123 45 67" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="subject">Kişi Sayısı</label>
+                                            <select id="subject">
+                                                <option value="1">1 Kişi</option>
+                                                <option value="2">2 Kişi</option>
+                                                <option value="3">3 Kişi</option>
+                                                <option value="4">4 Kişi</option>
+                                                <option value="5">5+ Kişi</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="input-group date date-picker-one">
+                                            <label for="date">Tarih</label>
+                                            <input type="text" class="form-control" id="date" placeholder="Tarih Seçin">
+                                            <span class="input-group-addon"><i class="fas fa-calendar-alt"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="time">Saat</label>
+                                            <select id="time">
+                                                <option value="10">10:00</option>
+                                                <option value="12">12:00</option>
+                                                <option value="14">14:00</option>
+                                                <option value="18">18:00</option>
+                                                <option value="20">20:00</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <button type="submit" name="submit" id="submit">
+                                            Masa Ayırt
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="feature-style-one-area default-padding overflow-hidden">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 feature-one-single">
+                <div class="feature-style-one-item wow fadeInUp">
+                    <img src="/Foodu v1.7/source/assets/img/icon/6.png" alt="Kaliteli Yemek">
+                    <h4>En Kaliteli Yemekler</h4>
+                    <p>
+                        Özenle seçilmiş, taze ve yöresel malzemelerle en lezzetli tarifleri sunuyoruz.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 feature-one-single">
+                <div class="feature-style-one-item wow fadeInDown">
+                    <img src="/Foodu v1.7/source/assets/img/icon/7.png" alt="Teslimat">
+                    <h4>Hızlı Teslimat</h4>
+                    <p>
+                        Sıcak ve taze yemekleriniz, hızla kapınıza kadar özenle ulaştırılır.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 feature-one-single">
+                <div class="feature-style-one-item wow fadeInUp">
+                    <img src="/Foodu v1.7/source/assets/img/icon/8.png" alt="Gerçek Lezzet">
+                    <h4>Gerçek Lezzet</h4>
+                    <p>
+                        Usta şeflerimizin dokunuşlarıyla, damakta iz bırakan unutulmaz lezzetler.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 feature-one-single">
+                <div class="feature-style-one-item wow fadeInDown">
+                    <img src="/Foodu v1.7/source/assets/img/icon/9.png" alt="Geleneksel Tatlar">
+                    <h4>Geleneksel Tatlar</h4>
+                    <p>
+                        Geçmişten günümüze taşınan, otantik tariflerle hazırlanmış eşsiz lezzetlerimiz.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

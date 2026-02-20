@@ -1,0 +1,50 @@
+﻿@model List<ResultChefDto>
+<div class="chef-style-one-area default-padding bottom-less">
+    <div class="container">
+
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 col-md-6 chef-one-single mb-30">
+                    <div class="chef-style-one-item wow fadeInUp">
+                        <div class="thumb">
+                            <img src="@item.ImageUrl" alt="@item.Fullname">
+                            <ul class="chef-one-social">
+                                @if (!string.IsNullOrEmpty(item.SocialMedia1))
+                                {
+                                    <li class="facebook">
+                                        <a href="@item.SocialMedia1" target="_blank">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                }
+                                @if (!string.IsNullOrEmpty(item.SocialMedia2))
+                                {
+                                    <li class="twitter">
+                                        <a href="@item.SocialMedia2" target="_blank">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                }
+                                @if (!string.IsNullOrEmpty(item.SocialMedia3))
+                                {
+                                    <li class="twitter">
+                                        <a href="@item.SocialMedia3" target="_blank">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                        <div class="info">
+                            <h4><a href="#">@item.Fullname</a></h4>
+                            <span>@item.Title</span>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

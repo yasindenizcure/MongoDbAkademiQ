@@ -1,8 +1,12 @@
 using AkademiQMongoDb.Services.AboutServices;
 using AkademiQMongoDb.Services.AdminServices;
+using AkademiQMongoDb.Services.BookingServices;
 using AkademiQMongoDb.Services.CategoryServices;
+using AkademiQMongoDb.Services.ChefServices;
+using AkademiQMongoDb.Services.ContactServices;
 using AkademiQMongoDb.Services.MenuServices;
 using AkademiQMongoDb.Services.ProductServices;
+using AkademiQMongoDb.Services.TestimonialServices;
 using AkademiQMongoDb.Settings;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -19,6 +23,10 @@ builder.Services.AddScoped<IProductService,ProductService>();
 builder.Services.AddScoped<IAdminService,AdminService>();
 builder.Services.AddScoped<IAboutService,AboutService>();
 builder.Services.AddScoped<IMenuService,MenuService>();
+builder.Services.AddScoped<ITestimonialService,TestimonialService>();
+builder.Services.AddScoped<IContactService,ContactService>();
+builder.Services.AddScoped<IBookingService,BookingService>();
+builder.Services.AddScoped<IChefService,ChefService>();
 
 builder.Services.AddControllersWithViews(options => 
 {

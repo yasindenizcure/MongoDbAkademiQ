@@ -1,0 +1,47 @@
+﻿@model UpdateChefDto
+@{
+    ViewData["Title"] = "UpdateChef";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>Şefi Güncelle</h1>
+<br />
+<br />
+<form method="post">
+    <div class="form-group">
+        <label>Şef Adı Soyadı</label>
+        <input type="text" asp-for="Fullname" class="form-control" />
+        <span class="text-danger" asp-validation-for="Fullname"></span>
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Şef Başlığı</label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <span class="text-danger" asp-validation-for="Title"></span>
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Şef Görsel</label>
+        <input type="text" asp-for="ImageUrl" class="form-control" />
+        <span class="text-danger" asp-validation-for="ImageUrl"></span>
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Sosyal Medya 1:</label>
+        <textarea asp-for="SocialMedia1" class="form-control"></textarea>
+        <span class="text-danger" asp-validation-for="SocialMedia1"></span>
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Sosyal Medya 2:</label>
+        <textarea asp-for="SocialMedia2" class="form-control"></textarea>
+        <span class="text-danger" asp-validation-for="SocialMedia2"></span>
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Sosyal Medya 3:</label>
+        <textarea asp-for="SocialMedia3" class="form-control"></textarea>
+        <span class="text-danger" asp-validation-for="SocialMedia3"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-outline-dark">Kaydet</button>
+</form>

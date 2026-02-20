@@ -1,0 +1,52 @@
+﻿@model List<ResultChefDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Hakkımızda Metinleri</h1>
+    <a href="/Admin/Chef/CreateChef/" class="btn btn-primary"><i class="fas fa-plus"></i> Yeni Şef Ekle</a>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover table-bordered align-middle">
+        <thead class="table-light">
+            <tr>
+                <th>Resim</th>
+                <th>Başlık</th>
+                <th>Şef Ad Soyad</th>
+                <th>Sosyal Medya 1:</th>
+                <th>Sosyal Medya 2:</th>
+                <th>Sosyal Medya 3:</th>
+                <th class="text-center">İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <img src="@item.ImageUrl" class="rounded" style="width:60px; height:60px; object-fit:cover;" alt="Görsel bulunamadı" />
+                    </td>
+                    <td class="fw-bold">@item.Title</td>
+
+                    <td class="fw-bold">
+                        @item.Fullname
+                    </td>
+                    <td class="max-width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@item.SocialMedia1</td>
+                    <td class="max-width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@item.SocialMedia2</td>
+                    <td class="max-width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@item.SocialMedia3</td>
+                    <td class="text-center">
+                        <a href="/Admin/Chef/UpdateChef/@item.Id" class="btn btn-sm btn-outline-info me-2">
+                            <i class="fas fa-edit"></i> Güncelle
+                        </a>
+                        <a href="/Admin/Chef/DeleteChef/@item.Id" onclick="return confirm('Bu ögeyi silmek istediğinize emin misiniz?')" class="btn btn-sm btn-outline-danger">
+                            <i class="fas fa-trash"></i> Sil
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,73 @@
+﻿<div class="reservation-style-one-area default-padding" id="rezervasyon-alani">
+    <div class="container">
+        <div class="reservation-style-one-items bg-dark text-light wow fadeInUp">
+            <div class="row">
+                <div class="col-xl-6 col-lg-5 reservation-thumb">
+                    <img src="/assets/img/thumb/3.jpg" alt="Rezervasyon">
+                    <div class="icon">
+                        <img src="/assets/img/icon/1.png" alt="İkon">
+                    </div>
+                </div>
+
+                <div class="col-xl-6 col-lg-7 reservation-info">
+                    <h4 class="sub-heading">Rezervasyon Yap</h4>
+                    <h2 class="title">Harika Bir Akşam Yemeği</h2>
+
+                    <form class="reservation-form" action="/Booking/CreateBooking" method="post">
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="Name">Adınız Soyadınız</label>
+                                    <input class="form-control" id="Name" name="Name" placeholder="Örn: Yasin" type="text" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="Phone">Telefon Numaranız</label>
+                                    <input class="form-control" id="Phone" name="Phone" placeholder="+90 555 123 45 67" type="text" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="PersonCount">Kişi Sayısı</label>
+                                    <select id="PersonCount" name="PersonCount" class="form-control">
+                                        <option value="1">1 Kişi</option>
+                                        <option value="2">2 Kişi</option>
+                                        <option value="3">3 Kişi</option>
+                                        <option value="4">4 Kişi</option>
+                                        <option value="5">5+ Kişi</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="Date">Tarih ve Saat</label>
+                                    <input type="datetime-local" class="form-control" id="Date" name="Date" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-lg-12">
+                                <button type="submit" class="btn btn-theme">
+                                    Masa Ayırt
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

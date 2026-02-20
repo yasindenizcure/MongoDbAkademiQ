@@ -1,0 +1,54 @@
+﻿@model List<ResultProductDto>
+
+
+<div class="food-menu-style-two-area default-padding bg-cover" style="background-image: url(/assets/img/shape/3.jpg);">
+    <div class="container">
+        <div class="food-menu-style-two">
+            <div class="row align-center">
+                <div class="col-lg-5">
+                    <div class="food-menu-style-two-thumb">
+                        <img class="wow fadeInDown" src="~/assets/img/menu/7.jpg" alt="Menü Görseli">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="food-menu-style-two-content wow fadeInUp">
+                        <h4 class="sub-heading">Öne Çıkan Lezzetler</h4>
+                        <ul class="meal-type">
+                            <li>Porsiyon</li>
+                            <li>Dürüm/Menü</li>
+                        </ul>
+                        <ul class="meal-items">
+                            @foreach (var item in Model) { 
+
+                            <li>
+                                <div class="thumbnail">
+                                    <img src="@item.ImageUrl" alt="Ürün Görseli">
+                                </div>
+                                <div class="content">
+                                    <div class="top">
+                                        <div class="title">
+                                            <h4><a href="#">@item.ProductName</a></h4>
+                                        </div>
+                                        <div class="price">
+                                            <span>@item.Price ₺</span>
+                                        </div>
+                                    </div>
+                                    <div class="bottom">
+                                        <div class="left">
+                                            <p>@item.Description</p>
+                                        </div>
+                                        <div class="right">
+                                            <p>@item.CategoryName</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            } 
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
