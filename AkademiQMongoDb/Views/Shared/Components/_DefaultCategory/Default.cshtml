@@ -1,4 +1,5 @@
 ﻿@model List<ResultCategoryDto>
+
 <div class="food-cat-area default-padding bg-gray" style="background-image: url('/assets/img/shape/3.png');">
     <div class="container">
         <div class="row">
@@ -18,8 +19,8 @@
                         @foreach (var item in Model)
                         {
                             <div class="swiper-slide">
-                                <div class="food-cat-item">
-                                    <a href="#" style="background-image: url('/assets/img/category/1.jpg');">
+                                <div class="food-cat-item" style="height: 250px; border-radius: 10px; overflow: hidden;">
+                                    <a href="#" style="background-image: url(); background-size: cover; background-position: center; height: 100%; display: block;">
                                         <h4>@item.CategoryName</h4>
                                     </a>
                                 </div>

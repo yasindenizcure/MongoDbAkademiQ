@@ -2,8 +2,8 @@
 
 namespace AkademiQMongoDb.Entities
 {
-    public class Gallery: BaseEntity
+    public class Subscriber: BaseEntity
     {
-        public string GalleryImageUrl { get; set; }
+        public string Email { get; set; }
     }
 }

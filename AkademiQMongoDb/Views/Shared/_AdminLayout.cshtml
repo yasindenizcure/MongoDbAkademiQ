@@ -4,88 +4,150 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foodu Admin Paneli</title>
+
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --primary-color: #ff5722;
+            --primary-light: rgba(255, 87, 34, 0.1);
+            --sidebar-bg: linear-gradient(180deg, #111827 0%, #1f2937 100%);
+            --body-bg: #f3f4f6;
+            --text-color: #374151;
+        }
+
         body {
-            background-color: #f4f6f9;
+            background-color: var(--body-bg);
             font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
         }
 
         .sidebar {
             height: 100vh;
-            width: 250px;
+            width: 260px;
             position: fixed;
             top: 0;
             left: 0;
-            background-color: #1a1a2e;
+            background: var(--sidebar-bg);
             padding-top: 20px;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
         }
 
         .sidebar-brand {
-            color: #fff;
+            color: #ffffff;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 30px;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 40px;
             display: block;
             text-decoration: none;
+            letter-spacing: 1px;
         }
 
             .sidebar-brand span {
-                color: #ff6b6b;
+                color: var(--primary-color);
+                font-weight: 300;
+            }
+
+            .sidebar-brand:hover {
+                color: #ffffff;
             }
 
         .sidebar a {
-            padding: 15px 25px;
+            padding: 12px 20px;
+            margin: 5px 15px;
             text-decoration: none;
-            font-size: 16px;
-            color: #a0a5ba;
-            display: block;
-            transition: 0.3s;
+            font-size: 15px;
+            font-weight: 500;
+            color: #9ca3af;
+            display: flex;
+            align-items: center;
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
 
-            .sidebar a:hover, .sidebar a.active {
-                color: #fff;
-                background-color: #ff6b6b;
-                border-left: 4px solid #fff;
-            }
-
             .sidebar a i {
-                margin-right: 10px;
+                margin-right: 15px;
                 width: 20px;
                 text-align: center;
+                font-size: 18px;
+            }
+
+            .sidebar a:hover, .sidebar a.active {
+                color: var(--primary-color);
+                background-color: var(--primary-light);
+                transform: translateX(5px);
             }
 
         .main-content {
-            margin-left: 250px;
-            padding: 20px;
+            margin-left: 260px;
+            padding: 30px;
             min-height: 100vh;
         }
 
         .topbar {
-            background: #fff;
+            background: #ffffff;
             padding: 15px 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 30px;
         }
+
+            .topbar h4 {
+                font-weight: 600;
+                color: #111827;
+            }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f9fafb;
+            padding: 5px 15px 5px 5px;
+            border-radius: 50px;
+            border: 1px solid #e5e7eb;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+            .user-info:hover {
+                background: #f3f4f6;
+            }
+
+            .user-info img {
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .user-info span {
+                font-weight: 600;
+                font-size: 14px;
+                color: #4b5563;
+            }
+
         .content-card {
-            background: #fff;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid #f3f4f6;
         }
     </style>
 </head>
 <body>
 
     <div class="sidebar">
-        <a href="/Admin/Default/Index" class="sidebar-brand">
+        <a href="/Default/Index" class="sidebar-brand">
             <i class="fas fa-utensils"></i> Foodu<span>Admin</span>
         </a>
 
@@ -94,21 +156,28 @@
         <a href="/Admin/Product/Index"><i class="fas fa-hamburger"></i> Ürünler</a>
         <a href="/Admin/Chef/Index"><i class="fas fa-user-tie"></i> Şefler</a>
         <a href="/Admin/Testimonial/Index"><i class="fas fa-comments"></i> Yorumlar</a>
-        <a href="/Admin/Mail/Index"><i class="fas fa-envelope"></i> İndirim Gönder</a>
-        <a href="/Default/Index/" target="_blank"><i class="fas fa-globe"></i> Siteye Git</a>
+        <a href="/Admin/Booking/Index"><i class="fas fa-calendar-check"></i> Rezervasyonlar</a>
+        <a href="/Admin/Contact/Index"><i class="fas fa-address-book"></i> İletişim / Mesajlar</a>
+        <a href="/Admin/Mail/Index"><i class="fas fa-envelope-open-text"></i> İndirim Gönder</a>
+        <a href="/Default/Index/" target="_blank" style="margin-top: 30px; border-top: 1px solid #374151; border-radius: 0; padding-top: 20px;">
+            <i class="fas fa-globe"></i> Siteye Git
+        </a>
     </div>
 
     <div class="main-content">
+
         <div class="topbar">
-            <h4 class="m-0 text-dark">Yönetim Paneli</h4>
+            <h4 class="m-0">Kontrol Paneli</h4>
             <div class="user-info">
-                <span class="text-muted"><i class="fas fa-user-circle fa-lg mr-2"></i> Admin</span>
+                <img src="https://ui-avatars.com/api/?name=@(User.Identity.Name ?? "Admin")&background=ff5722&color=fff" alt="Profil">
+                <span>@(User.Identity.Name ?? "Yönetici")</span>
             </div>
         </div>
 
         <div class="content-card">
             @RenderBody()
         </div>
+
     </div>
 
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

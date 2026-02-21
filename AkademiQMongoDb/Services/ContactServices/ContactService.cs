@@ -11,7 +11,6 @@ namespace AkademiQMongoDb.Services.ContactServices
     public class ContactService : IContactService
     {
         private readonly IMongoCollection<Contact> _contactCollection;
-
         public ContactService(IDatabaseSettings databaseSettings)
         {
             var client = new MongoClient(databaseSettings.ConnectionString);
@@ -20,8 +19,8 @@ namespace AkademiQMongoDb.Services.ContactServices
         }
         public async Task CreateAsync(CreateContactDto contactDto)
         {
-            var contacts = contactDto.Adapt<Contact>();
-            await _contactCollection.InsertOneAsync(contacts);
+            var contact = contactDto.Adapt<Contact>();
+            await _contactCollection.InsertOneAsync(contact);
         }
 
         public async Task DeleteAsync(string id)
@@ -31,14 +30,14 @@ namespace AkademiQMongoDb.Services.ContactServices
 
         public async Task<List<ResultContactDto>> GetAllAsync()
         {
-            var contacts = await _contactCollection.AsQueryable().ToListAsync();
-            return contacts.Adapt<List<ResultContactDto>>().ToList();
+            var contact = await _contactCollection.AsQueryable().ToListAsync();
+            return contact.Adapt<List<ResultContactDto>>().ToList();
         }
 
         public async Task<UpdateContactDto> GetByIdAsync(string id)
         {
-            var contacts = await _contactCollection.Find(c => c.Id == id).FirstOrDefaultAsync();
-            return contacts.Adapt<UpdateContactDto>();
+            var contact = await _contactCollection.Find(c => c.Id == id).FirstOrDefaultAsync();
+            return contact.Adapt<UpdateContactDto>();
         }
 
         public async Task UpdateAsync(UpdateContactDto contactDto)

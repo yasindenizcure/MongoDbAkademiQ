@@ -123,7 +123,7 @@
                         <ul>
                             <li class="search"><a href="#"><i class="fas fa-search"></i></a></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="/Admin/Product/Index/" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="far fa-shopping-cart"></i>
                                     <span class="badge">0</span>
                                 </a>
@@ -134,20 +134,21 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main style="padding-top: 0; margin-top: 0;">
         @RenderBody()
     </main>
 
     <footer class="bg-dark footer-style-one text-light">
         <div class="container">
             <div class="row">
+
                 <div class="col-lg-3 col-md-6 footer-item mt-50">
                     <div class="f-item about">
-                        <img src="/Foodu v1.7/source/assets/img/logo-3.png" alt="Image Not Found">
+                        <img src="/Foodu v1.7/source/assets/img/logo-3.png" alt="Logo">
                         <p>Lezzetli tarifleri ve ilhamı restoranımızda keşfedin.</p>
                         <ul class="opening-list">
                             <li>Pazartesi - Cuma <span class="text-end">11:00 - 23:00</span></li>
-                            <li>Cumartesi <span class="text-end">12:00 - 00:00</span></li>
+                            <li>Cumartesi - Pazar <span class="text-end">12:00 - 00:00</span></li>
                         </ul>
                     </div>
                 </div>
@@ -170,7 +171,7 @@
                         <ul class="contact-widget">
                             <li>
                                 <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
-                                <div class="content">Fatih Mah. Harbiye Sok. İstanbul</div>
+                                <div class="content">İstanbul / Pendik</div>
                             </li>
                             <li>
                                 <div class="icon"><i class="fas fa-phone"></i></div>
@@ -186,37 +187,35 @@
 
                 <div class="col-lg-4 col-md-6 footer-item mt-50">
                     <div class="f-item newsletter">
-                        <h4 class="widget-title">Bültene Abone Ol</h4>
-                        <p>Son haberleri ve özel teklifleri almak için abone olun.</p>
-                        <form action="#">
-                            <div class="input-group stylish-input-group">
-                                <input type="email" placeholder="E-Posta Adresiniz" class="form-control" name="email">
-                                <span class="input-group-addon">
-                                    <button type="submit"><i class="fas fa-arrow-right"></i></button>
-                                </span>
-                            </div>
+                        <h4 class="widget-title">Bültenimize Abone Olun</h4>
+                        <p>En yeni lezzetlerden ve özel indirim fırsatlarından ilk sizin haberiniz olsun.</p>
+                        <form action="/Subscriber/CreateSubscriber" method="post">
+                            <input type="email" placeholder="E-posta Adresiniz" class="form-control" name="Email" required>
+                            <button type="submit"> Abone Ol <i class="fas fa-long-arrow-right"></i></button>
                         </form>
+
                         <div class="footer-socila-items mt-30">
                             <h4>Bizi Takip Edin: </h4>
                             <ul class="footer-social">
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="instagram.com/yasincure_"><i class="fab fa-instagram"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                             </ul>
                         </div>
+
                     </div>
                 </div>
-            </div>
 
-            <div class="footer-bottom">
-                <div class="row align-center">
-                    <div class="col-lg-6">
-                        <p>© Copyright 2026 Foodu. Tüm hakları saklıdır.</p>
-                    </div>
+            </div>
+        </div> <div class="footer-bottom">
+            <div class="row align-center">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <p>© Copyright 2026 Foodu. Tüm hakları saklıdır.</p>
                 </div>
             </div>
         </div>
     </footer>
+
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top" style="position:fixed; bottom:30px; right:30px; display:none; z-index:999;"><i class="fa fa-arrow-up"></i></a>
 
     <script src="/Foodu v1.7/source/assets/js/jquery-3.6.0.min.js"></script>

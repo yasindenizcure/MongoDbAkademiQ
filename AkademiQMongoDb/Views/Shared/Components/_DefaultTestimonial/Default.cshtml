@@ -8,35 +8,48 @@
                 <div class="col-lg-8 offset-lg-2">
                     <div class="testimonial-style-one-carousel swiper">
                         <div class="swiper-wrapper">
+
                             @foreach (var item in Model)
                             {
                                 <div class="swiper-slide">
                                     <div class="testimonial-style-one">
                                         <div class="item">
                                             <div class="content">
-                                                <div class="tm-review">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
+
+                                                <div class="tm-review mb-3">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
                                                 </div>
-                                                <div class="provider">
-                                                    <h4>@item.Title</h4>
-                                                </div><h4>@item.Fullname</h4></div>
-                                                <p>@item.Comment</p>
-                                                <div class="tm-proivder-thumb">
-                                                    <img src="@item.ImageUrl" alt="Müşteri Görseli">
+
+                                                <p class="font-italic mb-4" style="font-size: 1.1rem; color: #555;">
+                                                    "@item.Comment"
+                                                </p>
+
+                                                <div class="provider d-flex flex-column align-items-center justify-content-center mt-4">
+                                                    <div class="tm-proivder-thumb mb-3" style="width: 120px; height: 120px;">
+                                                        <img src="@item.ImageUrl"
+                                                             alt="Müşteri Görseli"
+                                                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid #ff5722; padding: 5px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                                                    </div>
+                                                    <div class="text-center">
+                                                        <h4 class="mb-1" style="font-size: 1.4rem; font-weight: 700; color: #111;">@item.Fullname</h4>
+                                                        <span style="color: #ff5722; font-weight: 600; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">@item.Title</span>
+                                                    </div>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
+                                </div>
                             }
 
                         </div>
                     </div>
 
-                    <div class="testimonial-pagination">
+                    <div class="testimonial-pagination mt-4">
                         <div class="swiper-pagination"></div>
                     </div>
 

@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "İndirim Maili Servisi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid mt-4">
+    <div class="card shadow mb-4 border-left-warning">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Toplu İndirim Maili Gönderme Sayfası</h6>
+        </div>
+        <div class="card-body text-center py-5">
+
+            <i class="fas fa-envelope-open-text fa-4x text-warning mb-4"></i>
+            <h2 class="h3 mb-3 text-gray-800">Bülten Abonelerine %20 İndirim Kodu Gönder</h2>
+            <p class="text-muted mb-4">
+                Aşağıdaki butona bastığınızda, veritabanındaki <strong>Subscribers (Aboneler)</strong> tablosunda kayıtlı olan <br />
+                tüm e-posta adreslerine otomatik olarak indirim kodu gönderilecektir.
+            </p>
+
+            @if (TempData["MailSuccess"] != null)
+            {
+                <div class="alert alert-success d-inline-block mb-4">
+                    <i class="fas fa-check-circle"></i> @TempData["MailSuccess"]
+                </div>
+                <br />
+            }
+
+            <form method="post" action="/Admin/Mail/SendDiscountEmail">
+                <button type="submit" class="btn btn-warning btn-lg px-5 rounded-pill shadow-sm">
+                    <i class="fas fa-paper-plane mr-2"></i> İndirim Kodunu Gönder
+                </button>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -10,5 +10,6 @@ namespace AkademiQMongoDb.Services.BookingServices
         Task CreateAsync(CreateBookingDto bookingDto);
         Task UpdateAsync(UpdateBookingDto bookingDto);
         Task DeleteAsync(string id);
+        Task ApproveBookingAsync(string id);
     }
 }

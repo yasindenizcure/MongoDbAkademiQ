@@ -19,6 +19,14 @@ namespace AkademiQMongoDb.Services.BookingServices
             _bookingCollection = database.GetCollection<Booking>(databaseSettings.BookingCollectionName);
         }
 
+        public async Task ApproveBookingAsync(string id)
+        {
+            var filter = Builders<Booking>.Filter.Eq(x => x.Id, id);
+            var update = Builders<Booking>.Update.Set(x=>x.IsApproved, true);
+
+            await _bookingCollection.UpdateOneAsync(filter, update);
+        }
+
         public async Task CreateAsync(CreateBookingDto bookingDto)
         {
             var booking = bookingDto.Adapt<Booking>();

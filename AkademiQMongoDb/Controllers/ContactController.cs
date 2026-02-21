@@ -1,4 +1,6 @@
-﻿using AkademiQMongoDb.Services.ContactServices;
+﻿using AkademiQMongoDb.DTOs.BookingDtos;
+using AkademiQMongoDb.DTOs.ContactDtos;
+using AkademiQMongoDb.Services.ContactServices;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,11 +15,15 @@ namespace AkademiQMongoDb.Controllers
         {
             _contactService = contactService;
         }
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var contacts = await _contactService.GetAllAsync();
-            return View(contacts);
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> CreateContact(CreateContactDto createContactDto)
+        {
+            await _contactService.CreateAsync(createContactDto);
+            return RedirectToAction("Index", "Default");
         }
     }
 }
-

@@ -14,11 +14,9 @@
         <thead class="table-light">
             <tr>
                 <th>Resim</th>
-                <th>Başlık</th>
-                <th>Şef Ad Soyad</th>
-                <th>Sosyal Medya 1:</th>
-                <th>Sosyal Medya 2:</th>
-                <th>Sosyal Medya 3:</th>
+                <th>Unvan</th>
+                <th>Şef Adı Soyadı</th>
+                <th>Sosyal Medya</th>
                 <th class="text-center">İşlemler</th>
             </tr>
         </thead>
@@ -34,9 +32,26 @@
                     <td class="fw-bold">
                         @item.Fullname
                     </td>
-                    <td class="max-width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@item.SocialMedia1</td>
-                    <td class="max-width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@item.SocialMedia2</td>
-                    <td class="max-width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@item.SocialMedia3</td>
+                    <td class="text-center">
+                        @if (!string.IsNullOrEmpty(item.SocialMedia1))
+                        {
+                            <a href="https://instagram.com/@item.SocialMedia1" target="_blank" class="text-danger me-2">
+                                <i class="fab fa-instagram fa-lg"></i>
+                            </a>
+                        }
+                        @if (!string.IsNullOrEmpty(item.SocialMedia2))
+                        {
+                            <a href="https://twitter.com/@item.SocialMedia2" target="_blank" class="text-primary me-2">
+                                <i class="fab fa-twitter fa-lg"></i>
+                            </a>
+                        }
+                        @if (!string.IsNullOrEmpty(item.SocialMedia3))
+                        {
+                            <a href="https://linkedin.com/in/@item.SocialMedia3" target="_blank" class="text-info">
+                                <i class="fab fa-linkedin fa-lg"></i>
+                            </a>
+                        }
+                    </td>
                     <td class="text-center">
                         <a href="/Admin/Chef/UpdateChef/@item.Id" class="btn btn-sm btn-outline-info me-2">
                             <i class="fas fa-edit"></i> Güncelle

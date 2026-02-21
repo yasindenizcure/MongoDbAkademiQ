@@ -1,4 +1,4 @@
-﻿using AkademiQMongoDb.DTOs.AboutDtos;
+﻿using AkademiQMongoDb.DTOs.CategoryDtos;
 using AkademiQMongoDb.DTOs.ContactDtos;
 
 namespace AkademiQMongoDb.Services.ContactServices

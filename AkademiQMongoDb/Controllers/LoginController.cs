@@ -24,7 +24,6 @@ namespace AkademiQMongoDb.Controllers
                 ModelState.AddModelError("", "Kullanıcı adı veya Şifre hatalı.");
                 return View(loginAdminDto);
             }
-            // Cookie Oluşturma İşlemi
             var admin = await _adminService.GetAdminByUserNameAsync(loginAdminDto.UserName);
 
             var claims = new List<Claim>
