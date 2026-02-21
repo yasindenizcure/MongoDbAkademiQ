@@ -15,6 +15,7 @@ Services (Business): Tüm iş mantığının toplandığı ve MongoDB operasyonl
 WebUI: Yönetim paneli (Dashboard) ve kullanıcı arayüzünü içeren dinamik MVC katmanı.
 
 MailKit & SMTP Entegrasyonu: Bülten abonelerine (Subscribers) toplu indirim kodları gönderimi, iletişim formu üzerinden gelen mesajların yönetimi ve dijital bildirim süreçlerini hayata geçirdim.
+
 -------------------------
 🛠️ Teknolojiler & Araçlar
 -------------------------
