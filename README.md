@@ -1,7 +1,8 @@
 🚀 Foodu Restoran: ASP.NET Core MVC, MongoDB & MailKit Projesi 🍔
 -------------------------
+
 Bu çalışmada, NoSQL veritabanı mimarisi ile modern bir web uygulamasının nasıl uçtan uca entegre edilebileceğine odaklandım.
--------------------------
+
 🏗️ Teknik Mimari & Katmanlı Yapı
 -------------------------
 Sorumlulukların net bir şekilde ayrılması (Separation of Concerns) prensibiyle projeyi 4 ana katman üzerine inşa ettim:
@@ -16,7 +17,6 @@ WebUI: Yönetim paneli (Dashboard) ve kullanıcı arayüzünü içeren dinamik M
 
 MailKit & SMTP Entegrasyonu: Bülten abonelerine (Subscribers) toplu indirim kodları gönderimi, iletişim formu üzerinden gelen mesajların yönetimi ve dijital bildirim süreçlerini hayata geçirdim.
 
--------------------------
 🛠️ Teknolojiler & Araçlar
 -------------------------
 Core: .NET 8 (ASP.NET Core MVC)
