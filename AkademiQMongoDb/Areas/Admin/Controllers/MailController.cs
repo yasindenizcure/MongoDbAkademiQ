@@ -41,7 +41,7 @@ namespace AkademiQMongoDb.Areas.Admin.Controllers
             {
                 await _emailService.SendEmailAsync(person.Email,subject,htmlMessage);
             }
-            TempData["MailSuccess"] = "Harika! İndirim mailleri tüm abonelere başarıyla fırlatıldı.";
+            TempData["MailSuccess"] = "Harika! İndirim mailleri tüm abonelere başarıyla gönderildi.";
             return RedirectToAction("Index");
         }
     }
